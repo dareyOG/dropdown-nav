@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>dropDown nav</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-size: 62.5%;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .nav {
+        font-size: 1.5rem;
+        background-color: grey;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .nav-logo {
+        list-style: none;
+        font-size: 1.2rem;
+      }
+
+      .nav-nav {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        position: relative;
+        list-style: none;
+      }
+
+      .nav-nav li {
+        text-align: center;
+        padding: 1rem 0;
+        width: 10rem;
+        cursor: pointer;
+      }
+
+      .nav-nav li a:focus {
+        outline: 2px dotted;
+        outline-offset: 18px;
+      }
+
+      .nav-nav li:link,
+      .nav-nav li:hover,
+      .nav-nav li:active {
+        background-color: rgba(0, 0, 0, 0.42);
+      }
+
+      .nav-nav li:first-child {
+        margin-left: 0;
+      }
+
+      .nav-nav li a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .dropdown {
+        list-style: none;
+        margin-top: 3rem;
+        position: absolute;
+        background-color: rgba(128, 128, 128, 0.4);
+        opacity: 0;
+        transition: margin-top 300ms;
+      }
+
+      .dropdown li {
+        padding: 1.2rem 0;
+      }
+
+      .dropdown li:hover {
+        font-style: italic;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+
+      .nav-nav li:focus-within .dropdown,
+      .nav-nav li:hover .dropdown {
+        text-align: center;
+        width: 10rem;
+        display: block;
+        cursor: pointer;
+        margin-top: 1rem;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <ul class="nav">
+        <li class="nav-logo">💮</li>
+        <ul class="nav-nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li>
+            <a href="#skills">Skills &#x25BE;</a>
+            <ul class="dropdown">
+              <li><a href="#">HTML</a></li>
+              <li><a href="#">CSS</a></li>
+              <li><a href="#">JavaScript</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#contact_us">Contact Us &#x25BE;</a>
+            <ul class="dropdown">
+              <li><a href="#">Github</a></li>
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Twitter</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#gallery">Gallery</a>
+          </li>
+        </ul>
+      </ul>
+    </header>
+  </body>
+</html>
